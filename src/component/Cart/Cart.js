@@ -18,6 +18,7 @@ const Cart = ({ cart, deleteItem }) => {
             <h2>This is Cart:{cart.name}</h2>
             {command}
             {cart.length === 0 || <p className='color'> YAY! you are bying</p>}
+
             {cart.map(tshirt => <h2>{tshirt.name}<button onClick={() => deleteItem(tshirt)}>delete</button> </h2>)}
 
             {cart.length !== 3 ? <p>added 3 Item </p> : <button>Clear All</button>}
