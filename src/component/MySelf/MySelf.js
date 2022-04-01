@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ringContext } from '../Grandpa/Grandpa';
 import Spacial from '../Spacial/Spacial';
 
-const MySelf = ({ house, ornament }) => {
+const MySelf = () => {
+    const [valu, house] = useContext(ringContext)
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             <h2>Myselfe</h2>
-            <small>{house}</small>
-            <Spacial ornament={ornament}></Spacial>
+            <small>H:{house}</small>
+            <small>value: {valu}</small>
+            <Spacial ></Spacial>
         </div>
     );
 };

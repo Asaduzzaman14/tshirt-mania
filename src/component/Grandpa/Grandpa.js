@@ -5,7 +5,7 @@ import Uncle from '../Uncle/Uncle';
 import './Grandpa.css'
 
 
-export let ringContext = createContext('ring')
+export let ringContext = createContext()
 
 const Grandpa = () => {
     const [house, setHouse] = useState(1)
@@ -13,16 +13,17 @@ const Grandpa = () => {
     const addMoreHome = () => {
         setHouse(house + 1)
     }
-    const ornament = 'daimond ring'
+
+    const chips = 'chips'
 
     return (
-        <ringContext.Provider value='choclet'>
+        <ringContext.Provider value={['chips', house, setHouse]}>
 
             <div>
                 <h2>grandpa</h2>
                 <small>{house} House <button onClick={addMoreHome}>Add more</button></small>
                 <div className='grandpa'>
-                    <Farher house={house} ornament={ornament}></Farher>
+                    <Farher house={house} ></Farher>
                     <Mother house={house}></Mother>
                     <Uncle house={house}></Uncle>
                 </div>
